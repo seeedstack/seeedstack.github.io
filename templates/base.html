@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>LYNK – Swipe Into Your Next Role | by Seeedstack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">LY<span>NK</span></a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#ai">AI Tools</a></li>
+    <li><a href="#tracking">Tracking</a></li>
+  </ul>
+  <a href="#waitlist" class="nav-cta">Get Early Access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div>
+    <div class="hero-inner">
+      <div class="hero-badge"><span class="hero-badge-dot"></span> Built by Seeedstack · For Students</div>
+      <h1>Swipe Into<br/>Your <em>Next Role</em></h1>
+      <p class="hero-sub">LYNK analyses your resume, matches you to the best jobs, and lets you apply with a single swipe. No more endless scrolling. No more generic searches.</p>
+      <div class="hero-actions">
+        <a href="#waitlist" class="btn-primary">Join the Waitlist</a>
+        <a href="#features" class="btn-ghost">See Features →</a>
+      </div>
+    </div>
+    <div class="hero-mockup">
+      <!-- Phone mockup -->
+      <div style="position:relative;">
+        <!-- Floating cards -->
+        <div class="float-card fc-left">
+          <div class="fc-label">Match Score</div>
+          <div class="fc-value">94%</div>
+          <div class="fc-sub">Frontend Dev @ Stripe</div>
+        </div>
+        <div class="float-card fc-right">
+          <div class="fc-label">Applications</div>
+          <div class="fc-value">12</div>
+          <div class="fc-sub">This week · 3 responses</div>
+        </div>
+
+        <div class="phone-frame">
+          <div class="phone-notch"></div>
+          <!-- Stack of job cards -->
+          <div class="job-card card-1">
+            <div class="job-logo">G</div>
+            <div class="job-title">UX Designer</div>
+            <div class="job-company">Google · Remote</div>
+          </div>
+          <div class="job-card card-2">
+            <div class="job-logo" style="background:linear-gradient(135deg,#0052cc,#2684ff)">A</div>
+            <div class="job-title">Frontend Dev</div>
+            <div class="job-company">Atlassian · Hybrid</div>
+          </div>
+          <div class="job-card card-top">
+            <div class="job-logo" style="background:linear-gradient(135deg,#ff4d00,#ff8a00)">S</div>
+            <div class="job-title">Software Engineer</div>
+            <div class="job-company">Stripe · Full-time</div>
+            <div class="job-tags">
+              <span class="match-badge">94% Match</span>
+              <span class="job-tag">React</span>
+              <span class="job-tag">Node.js</span>
+            </div>
+          </div>
+          <!-- Swipe buttons -->
+          <div class="swipe-btns">
+            <div class="swipe-btn swipe-skip">✕</div>
+            <div class="swipe-btn swipe-save">🔖</div>
+            <div class="swipe-btn swipe-apply">✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat"><div class="stat-num">50<span>K+</span></div><div class="stat-label">Live Job Listings</div></div>
+  <div class="stat"><div class="stat-num">10<span>+</span></div><div class="stat-label">Job Board Sources</div></div>
+  <div class="stat"><div class="stat-num">3<span>×</span></div><div class="stat-label">Faster Than Traditional Search</div></div>
+  <div class="stat"><div class="stat-num">94<span>%</span></div><div class="stat-label">Match Accuracy</div></div>
+</div>
+
+<!-- FEATURES BENTO -->
+<section class="features-section" id="features">
+  <div class="section-tag reveal">Core Features</div>
+  <h2 class="reveal">Everything you need to<br/><em>land your first role</em></h2>
+  <p class="section-sub reveal">A complete job hunting platform built specifically for students — intelligent, fast, and beautifully simple.</p>
+  <div class="bento">
+    <!-- Resume + Smart Match -->
+    <div class="bento-card bc-1 bc-big reveal">
+      <div class="bento-icon">📄</div>
+      <div class="bento-title">Resume Upload & Smart Matching</div>
+      <div class="bento-body">Upload your PDF resume once. Our NLP engine extracts skills, experience, and education to rank every job by how well it fits you.</div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>React</span><span>94%</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:94%"></div></div>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>Node.js</span><span>78%</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:78%; background:linear-gradient(90deg,#64b4ff,#a0cfff)"></div></div>
+      </div>
+      <div class="score-bar-wrap">
+        <div class="score-bar-label"><span>TypeScript</span><span>61%</span></div>
+        <div class="score-bar-track"><div class="score-bar-fill" style="width:61%; background:linear-gradient(90deg,#9b59b6,#c39bd3)"></div></div>
+      </div>
+      <div class="bento-highlight">NLP-Powered Parser</div>
+    </div>
+    <!-- Swipe to apply -->
+    <div class="bento-card bc-2 reveal">
+      <div class="bento-icon">👆</div>
+      <div class="bento-title">Swipe to Apply</div>
+      <div class="bento-body">Tinder-style job discovery — swipe right to apply, left to skip, up to save for later. One swipe auto-fills your application on supported job boards. Browsing a job feed has never been this fast or satisfying.</div>
+      <div class="bento-highlight">One-Tap Auto-Apply</div>
+    </div>
+    <!-- Job Aggregation -->
+    <div class="bento-card bc-3 reveal">
+      <div class="bento-icon">🌐</div>
+      <div class="bento-title">Job Aggregation</div>
+      <div class="bento-body">Pulls listings from LinkedIn, Indeed, Glassdoor, Remotive and more into a single, deduplicated feed.</div>
+    </div>
+    <!-- Company Profiles -->
+    <div class="bento-card bc-4 reveal">
+      <div class="bento-icon">🏢</div>
+      <div class="bento-title">Company Profiles</div>
+      <div class="bento-body">Culture notes, Glassdoor-style ratings, and company overviews embedded directly in every job card.</div>
+    </div>
+    <!-- Alerts -->
+    <div class="bento-card bc-5 reveal">
+      <div class="bento-icon">🔔</div>
+      <div class="bento-title">Real-Time Job Alerts</div>
+      <div class="bento-body">Push and email notifications the moment a high-match job drops. Daily digest with your top 5 picks every morning.</div>
+    </div>
+    <!-- Profile builder -->
+    <div class="bento-card bc-6 reveal">
+      <div class="bento-icon">⚙️</div>
+      <div class="bento-title">Profile & Preference Builder</div>
+      <div class="bento-body">Set preferred roles, industries, locations, salary range, work type, and experience level. Add or remove skills beyond what the parser detects. Your feed gets smarter with every swipe — the more you interact, the more precisely LYNK tailors your matches to your goals and style.</div>
+      <div class="bento-highlight">Adaptive Learning Feed</div>
+    </div>
+    <!-- Trending -->
+    <div class="bento-card bc-7 reveal">
+      <div class="bento-icon">📈</div>
+      <div class="bento-title">Trending Roles</div>
+      <div class="bento-body">Surface in-demand roles based on live market data. Know what skills employers are actively looking for right now.</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section" id="how">
+  <div class="section-tag reveal">How It Works</div>
+  <h2 class="reveal">From zero to <em>applied</em><br/>in under 5 minutes</h2>
+  <div class="steps reveal">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Upload Your Resume</div>
+      <div class="step-body">Drop in your PDF. LYNK's NLP engine parses your skills, job titles, education, and experience automatically.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Set Your Preferences</div>
+      <div class="step-body">Pick your target roles, industry, location, salary range, and whether you want remote, hybrid, or on-site work.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Swipe Through Matches</div>
+      <div class="step-body">Your personalised feed surfaces the highest-match jobs first. Swipe right to apply, left to skip, up to save.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-title">Auto-Apply</div>
+      <div class="step-body">On a right swipe, LYNK auto-fills or redirects your application on supported job boards instantly.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-title">Track Everything</div>
+      <div class="step-body">Watch your applications move from Applied → Interviewing → Offer in one clean dashboard.</div>
+    </div>
+  </div>
+</section>
+
+<!-- AI FEATURES -->
+<section class="ai-section" id="ai">
+  <div>
+    <div class="section-tag reveal">AI Intelligence</div>
+    <h2 class="reveal">Your personal<br/>career <em>copilot</em></h2>
+    <p class="section-sub reveal">LYNK's AI layer goes beyond matching — it helps you improve, prepare, and stand out at every stage of the process.</p>
+    <div class="ai-features reveal">
+      <div class="ai-feat">
+        <div class="ai-feat-icon">🔍</div>
+        <div class="ai-feat-text">
+          <h4>Match Score Explainability</h4>
+          <p>See exactly which skills matched and which are missing for any role — no black boxes.</p>
+        </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-icon">✍️</div>
+        <div class="ai-feat-text">
+          <h4>Cover Letter Generator</h4>
+          <p>Auto-generates a tailored cover letter using your resume and the job description. One click, done.</p>
+        </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-icon">📊</div>
+        <div class="ai-feat-text">
+          <h4>Skill Gap Analysis</h4>
+          <p>Highlights skills frequently required in your target roles that are absent from your resume.</p>
+        </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-icon">💰</div>
+        <div class="ai-feat-text">
+          <h4>Salary Insights</h4>
+          <p>Estimated salary range for every role based on real market data — so you always know your worth.</p>
+        </div>
+      </div>
+      <div class="ai-feat">
+        <div class="ai-feat-icon">🎤</div>
+        <div class="ai-feat-text">
+          <h4>Interview Prep Tips</h4>
+          <p>Role-specific common interview questions surface automatically after you apply.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ai-visual reveal">
+    <div class="ai-vis-label">Skill Match Analysis · Software Engineer @ Stripe</div>
+    <div>
+      <span class="skill-pill match">React</span>
+      <span class="skill-pill match">Node.js</span>
+      <span class="skill-pill match">REST APIs</span>
+      <span class="skill-pill match">Git</span>
+      <span class="skill-pill missing">GraphQL</span>
+      <span class="skill-pill missing">Redis</span>
+      <span class="skill-pill missing">Kubernetes</span>
+    </div>
+    <div style="margin-top:20px; padding:16px; background:#141414; border-radius:14px; border:1px solid var(--border);">
+      <div style="font-size:0.72rem; color:var(--muted); margin-bottom:8px; letter-spacing:0.5px; text-transform:uppercase;">Salary Estimate</div>
+      <div style="font-family:'Syne',sans-serif; font-size:1.6rem; font-weight:800; color:var(--white);">₹18L – ₹26L<span style="font-size:0.8rem; color:#666; font-weight:400; font-family:'DM Sans',sans-serif;"> / year</span></div>
+      <div style="font-size:0.75rem; color:#555; margin-top:4px;">Based on 340 similar roles · Bengaluru</div>
+    </div>
+    <div class="cover-letter-box">
+      "As a Computer Science final year student with hands-on experience in React and Node.js, I'm excited to bring my full-stack skills to Stripe's engineering team. My recent project — a real-time payment dashboard — directly aligns with Stripe's mission of..."
+    </div>
+  </div>
+</section>
+
+<!-- APPLICATION TRACKING -->
+<section class="tracking-section" id="tracking">
+  <div class="section-tag reveal">Application Tracking</div>
+  <h2 class="reveal">Every application.<br/><em>All in one place.</em></h2>
+  <p class="section-sub reveal">Your personal hiring pipeline. Update statuses manually or let LYNK track them automatically.</p>
+  <div class="tracker-grid reveal">
+    <div class="track-col">
+      <div class="track-col-header"><span class="track-dot applied"></span> Applied</div>
+      <div class="track-job-card">
+        <div class="track-job-name">Frontend Engineer</div>
+        <div class="track-job-co">Stripe</div>
+        <div class="track-job-date">Applied Mar 6, 2026</div>
+      </div>
+      <div class="track-job-card">
+        <div class="track-job-name">SWE Intern</div>
+        <div class="track-job-co">Razorpay</div>
+        <div class="track-job-date">Applied Mar 5, 2026</div>
+      </div>
+    </div>
+    <div class="track-col">
+      <div class="track-col-header"><span class="track-dot interview"></span> Interviewing</div>
+      <div class="track-job-card">
+        <div class="track-job-name">Product Designer</div>
+        <div class="track-job-co">Notion</div>
+        <div class="track-job-date">Round 2 · Mar 10</div>
+      </div>
+    </div>
+    <div class="track-col">
+      <div class="track-col-header"><span class="track-dot offer"></span> Offer</div>
+      <div class="track-job-card">
+        <div class="track-job-name">Backend Dev</div>
+        <div class="track-job-co">Setu</div>
+        <div class="track-job-date">🎉 Offer received</div>
+      </div>
+    </div>
+    <div class="track-col">
+      <div class="track-col-header"><span class="track-dot rejected"></span> Rejected</div>
+      <div class="track-job-card">
+        <div class="track-job-name">ML Engineer</div>
+        <div class="track-job-co">Google</div>
+        <div class="track-job-date">Mar 1, 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section class="audience-section">
+  <div class="section-tag reveal">Who It's For</div>
+  <h2 class="reveal">Built for <em>students</em>,<br/>loved by job seekers</h2>
+  <p class="section-sub reveal">Whether you're fresh out of college or pivoting careers, LYNK meets you where you are.</p>
+  <div class="audience-cards">
+    <div class="audience-card reveal">
+      <div class="aud-icon">🎓</div>
+      <div class="aud-title">Final Year Students</div>
+      <div class="aud-body">Land your first full-time role before graduation. LYNK shows you exactly what skills companies want and helps you close the gap fast.</div>
+    </div>
+    <div class="audience-card reveal">
+      <div class="aud-icon">💻</div>
+      <div class="aud-title">Internship Hunters</div>
+      <div class="aud-body">Find relevant internships across hundreds of companies with one feed. Swipe through matches and apply in seconds.</div>
+    </div>
+    <div class="audience-card reveal">
+      <div class="aud-icon">🔄</div>
+      <div class="aud-title">Career Switchers</div>
+      <div class="aud-body">Transitioning to tech? LYNK's skill gap analysis tells you exactly what to learn and surfaces roles that match your transferable skills.</div>
+    </div>
+    <div class="audience-card reveal">
+      <div class="aud-icon">🌍</div>
+      <div class="aud-title">Remote-First Seekers</div>
+      <div class="aud-body">Filter by remote, hybrid, or on-site instantly. Access Remotive, LinkedIn, and global boards without leaving LYNK.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / WAITLIST -->
+<section class="cta-section" id="waitlist">
+  <div class="cta-glow"></div>
+  <div class="section-tag" style="position:relative;z-index:1">Early Access</div>
+  <h2>Start swiping.<br/><em>Stop searching.</em></h2>
+  <p class="section-sub">Join thousands of students on the LYNK waitlist and be the first to land your next role.</p>
+  <div class="cta-form">
+    <input type="email" class="cta-input" placeholder="Enter your email address"/>
+    <a href="#" class="btn-primary">Get Early Access</a>
+  </div>
+  <p style="margin-top:20px; font-size:0.78rem; color:#444; position:relative; z-index:1;">No spam. We'll only reach out when LYNK is ready for you.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <a href="#" class="nav-logo">LY<span style="color:var(--accent)">NK</span></a>
+    <p>A product by <strong style="color:#777">Seeedstack</strong>.<br/>Swipe into your next role.</p>
+  </div>
+  <div class="footer-col">
+    <h5>Product</h5>
+    <ul>
+      <li><a href="#features">Features</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#ai">AI Tools</a></li>
+      <li><a href="#tracking">Tracking</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Company</h5>
+    <ul>
+      <li><a href="#">About Seeedstack</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h5>Legal</h5>
+    <ul>
+      <li><a href="#">Privacy Policy</a></li>
+      <li><a href="#">Terms of Service</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 Seeedstack. All rights reserved.</span>
+  <span>Built with ❤️ for students everywhere</span>
+</div>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => io.observe(el));
+
+  // Subtle card tilt on mousemove
+  const phoneFrame = document.querySelector('.phone-frame');
+  if (phoneFrame) {
+    document.querySelector('.hero').addEventListener('mousemove', (e) => {
+      const rect = phoneFrame.getBoundingClientRect();
+      const cx = rect.left + rect.width / 2;
+      const cy = rect.top + rect.height / 2;
+      const dx = (e.clientX - cx) / 30;
+      const dy = (e.clientY - cy) / 30;
+      phoneFrame.style.transform = `perspective(800px) rotateY(${dx}deg) rotateX(${-dy}deg)`;
+    });
+    document.querySelector('.hero').addEventListener('mouseleave', () => {
+      phoneFrame.style.transform = '';
+    });
+  }
+</script>
+</body>
+</html>
