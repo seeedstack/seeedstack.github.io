@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>LYNK – Swipe Into Your Next Role | by Seeedstack</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>LYNK – Swipe Into Your Next Role | by Seeedstack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&family=Bebas+Neue&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{url_for('static', filename='js/script.js')}}"></script>
 </head>
 <body>
 
@@ -38,56 +39,224 @@
       </div>
     </div>
     <div class="hero-mockup">
-      <!-- Phone mockup -->
-      <div style="position:relative;">
-        <!-- Floating cards -->
-        <div class="float-card fc-left">
-          <div class="fc-label">Match Score</div>
-          <div class="fc-value">94%</div>
-          <div class="fc-sub">Frontend Dev @ Stripe</div>
-        </div>
-        <div class="float-card fc-right">
-          <div class="fc-label">Applications</div>
-          <div class="fc-value">12</div>
-          <div class="fc-sub">This week · 3 responses</div>
+      <div class="mockup-scene">
+
+        <!-- LEFT floating panel: AI Match Breakdown -->
+        <div class="hf-card hf-left">
+          <div class="hf-card-title">🧠 AI Match Breakdown</div>
+          <div class="hf-skill-row"><span class="hf-skill-name">React</span><div class="hf-bar-track"><div class="hf-bar-fill" style="width:94%"></div></div><span class="hf-pct">94%</span></div>
+          <div class="hf-skill-row"><span class="hf-skill-name">Node.js</span><div class="hf-bar-track"><div class="hf-bar-fill" style="width:78%;background:linear-gradient(90deg,#64b4ff,#a0cfff)"></div></div><span class="hf-pct">78%</span></div>
+          <div class="hf-skill-row"><span class="hf-skill-name">TypeScript</span><div class="hf-bar-track"><div class="hf-bar-fill" style="width:61%;background:linear-gradient(90deg,#c084fc,#e0aaff)"></div></div><span class="hf-pct">61%</span></div>
+          <div class="hf-missing-label">Missing skills →</div>
+          <div class="hf-missing-tags">
+            <span class="hf-miss-tag">GraphQL</span>
+            <span class="hf-miss-tag">Redis</span>
+          </div>
         </div>
 
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <!-- Stack of job cards -->
-          <div class="job-card card-1">
-            <div class="job-logo">G</div>
-            <div class="job-title">UX Designer</div>
-            <div class="job-company">Google · Remote</div>
-          </div>
-          <div class="job-card card-2">
-            <div class="job-logo" style="background:linear-gradient(135deg,#0052cc,#2684ff)">A</div>
-            <div class="job-title">Frontend Dev</div>
-            <div class="job-company">Atlassian · Hybrid</div>
-          </div>
-          <div class="job-card card-top">
-            <div class="job-logo" style="background:linear-gradient(135deg,#ff4d00,#ff8a00)">S</div>
-            <div class="job-title">Software Engineer</div>
-            <div class="job-company">Stripe · Full-time</div>
-            <div class="job-tags">
-              <span class="match-badge">94% Match</span>
-              <span class="job-tag">React</span>
-              <span class="job-tag">Node.js</span>
-            </div>
-          </div>
-          <!-- Swipe buttons -->
-          <div class="swipe-btns">
-            <div class="swipe-btn swipe-skip">✕</div>
-            <div class="swipe-btn swipe-save">🔖</div>
-            <div class="swipe-btn swipe-apply">✓</div>
+        <!-- RIGHT floating panel: Activity feed -->
+        <div class="hf-card hf-right">
+          <div class="hf-card-title">📬 Live Activity</div>
+          <div class="hf-activity-list" id="activityFeed">
+            <div class="hf-activity-item hf-act-apply">✓ Applied → Stripe SWE</div>
+            <div class="hf-activity-item hf-act-save">🔖 Saved → Notion PM</div>
+            <div class="hf-activity-item hf-act-match">⚡ 97% match found</div>
+            <div class="hf-activity-item hf-act-alert">🔔 3 new jobs today</div>
           </div>
         </div>
-      </div>
+
+        <!-- PHONE FRAME -->
+        <div class="phone-frame" id="phoneFrame">
+
+          <!-- STATUS BAR -->
+          <div class="phone-status-bar">
+            <span>9:41</span>
+            <span style="display:flex;gap:4px;align-items:center;">
+              <svg width="12" height="9" viewBox="0 0 12 9" fill="none"><rect x="0" y="4" width="2" height="5" rx="0.5" fill="#fff" opacity="0.5"/><rect x="3" y="3" width="2" height="6" rx="0.5" fill="#fff" opacity="0.7"/><rect x="6" y="1.5" width="2" height="7.5" rx="0.5" fill="#fff" opacity="0.9"/><rect x="9" y="0" width="2" height="9" rx="0.5" fill="#fff"/></svg>
+              🔋
+            </span>
+          </div>
+
+          <!-- APP SCREENS (tab-switched) -->
+          <div class="app-screens">
+
+            <!-- SCREEN 1: Swipe Feed -->
+            <div class="app-screen active" id="screen-feed">
+              <div class="app-header">
+                <div class="app-header-left">
+                  <div class="app-avatar">AK</div>
+                  <div>
+                    <div class="app-greeting">Good morning 👋</div>
+                    <div class="app-name">Arjun Kumar</div>
+                  </div>
+                </div>
+                <div class="app-notif-btn">🔔<span class="notif-dot"></span></div>
+              </div>
+
+              <!-- Card stack -->
+              <div class="card-stack" id="cardStack">
+                <!-- Background cards -->
+                <div class="swipe-card sc-bg2">
+                  <div class="sc-logo" style="background:linear-gradient(135deg,#7c3aed,#a855f7)">N</div>
+                  <div class="sc-info">
+                    <div class="sc-title">Product Manager</div>
+                    <div class="sc-company">Notion · Remote</div>
+                  </div>
+                </div>
+                <div class="swipe-card sc-bg1">
+                  <div class="sc-logo" style="background:linear-gradient(135deg,#0052cc,#2684ff)">A</div>
+                  <div class="sc-info">
+                    <div class="sc-title">Frontend Dev</div>
+                    <div class="sc-company">Atlassian · Hybrid</div>
+                  </div>
+                </div>
+                <!-- TOP active card -->
+                <div class="swipe-card sc-top" id="topCard">
+                  <div class="sc-top-header">
+                    <div class="sc-logo sc-logo-lg" style="background:linear-gradient(135deg,#ff4d00,#ff8a00)">S</div>
+                    <div class="sc-match-ring">
+                      <svg viewBox="0 0 44 44" width="44" height="44">
+                        <circle cx="22" cy="22" r="18" fill="none" stroke="#222" stroke-width="3"/>
+                        <circle cx="22" cy="22" r="18" fill="none" stroke="#ff4d00" stroke-width="3" stroke-dasharray="113" stroke-dashoffset="7" stroke-linecap="round" transform="rotate(-90 22 22)"/>
+                      </svg>
+                      <span class="sc-match-pct">94%</span>
+                    </div>
+                  </div>
+                  <div class="sc-title-lg">Software Engineer</div>
+                  <div class="sc-company-row">
+                    <span class="sc-company-name">Stripe</span>
+                    <span class="sc-dot">·</span>
+                    <span class="sc-type-badge">Full-time</span>
+                    <span class="sc-dot">·</span>
+                    <span class="sc-location">📍 Bengaluru</span>
+                  </div>
+                  <div class="sc-salary">₹18L – ₹26L / yr</div>
+                  <div class="sc-tags">
+                    <span class="sc-tag sc-tag-match">React</span>
+                    <span class="sc-tag sc-tag-match">Node.js</span>
+                    <span class="sc-tag sc-tag-miss">GraphQL</span>
+                    <span class="sc-tag">REST APIs</span>
+                  </div>
+                  <div class="sc-desc">Build and scale payment infrastructure used by millions of businesses worldwide.</div>
+                  <!-- Swipe overlays -->
+                  <div class="swipe-overlay apply-overlay" id="applyOverlay">✓ APPLY</div>
+                  <div class="swipe-overlay skip-overlay" id="skipOverlay">✕ SKIP</div>
+                </div>
+              </div>
+
+              <!-- Swipe hint -->
+              <div class="swipe-hint" id="swipeHint">← swipe to skip &nbsp;|&nbsp; swipe to apply →</div>
+
+              <!-- Action buttons -->
+              <div class="action-btns">
+                <button class="act-btn act-skip" id="btnSkip" title="Skip">✕</button>
+                <button class="act-btn act-save" id="btnSave" title="Save">🔖</button>
+                <button class="act-btn act-apply" id="btnApply" title="Apply">✓</button>
+              </div>
+            </div>
+
+            <!-- SCREEN 2: Dashboard -->
+            <div class="app-screen" id="screen-dash">
+              <div class="app-header">
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--white)">My Applications</div>
+                <div style="font-size:0.75rem;color:var(--muted)">Mar 2026</div>
+              </div>
+              <div class="dash-stats">
+                <div class="dash-stat"><div class="dash-stat-num" style="color:#64b4ff">12</div><div class="dash-stat-label">Applied</div></div>
+                <div class="dash-stat"><div class="dash-stat-num" style="color:#ffb347">3</div><div class="dash-stat-label">Interviews</div></div>
+                <div class="dash-stat"><div class="dash-stat-num" style="color:#50dc78">1</div><div class="dash-stat-label">Offer</div></div>
+              </div>
+              <div class="dash-pipeline">
+                <div class="pipe-item pipe-applied">
+                  <div class="pipe-dot" style="background:#64b4ff"></div>
+                  <div class="pipe-info"><div class="pipe-role">Software Engineer</div><div class="pipe-co">Stripe · Applied Mar 6</div></div>
+                  <div class="pipe-badge" style="background:rgba(100,180,255,0.1);color:#64b4ff">Applied</div>
+                </div>
+                <div class="pipe-item">
+                  <div class="pipe-dot" style="background:#ffb347"></div>
+                  <div class="pipe-info"><div class="pipe-role">Product Designer</div><div class="pipe-co">Notion · Round 2</div></div>
+                  <div class="pipe-badge" style="background:rgba(255,179,71,0.1);color:#ffb347">Interview</div>
+                </div>
+                <div class="pipe-item">
+                  <div class="pipe-dot" style="background:#50dc78"></div>
+                  <div class="pipe-info"><div class="pipe-role">Backend Engineer</div><div class="pipe-co">Setu · Offer!</div></div>
+                  <div class="pipe-badge" style="background:rgba(80,220,120,0.1);color:#50dc78">🎉 Offer</div>
+                </div>
+                <div class="pipe-item">
+                  <div class="pipe-dot" style="background:#888"></div>
+                  <div class="pipe-info"><div class="pipe-role">SWE Intern</div><div class="pipe-co">Razorpay · Mar 5</div></div>
+                  <div class="pipe-badge" style="background:rgba(136,136,136,0.1);color:#888">Applied</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SCREEN 3: AI Cover Letter -->
+            <div class="app-screen" id="screen-ai">
+              <div class="app-header">
+                <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--white)">✦ AI Copilot</div>
+                <div style="font-size:0.7rem;color:var(--accent);background:rgba(255,77,0,0.1);padding:3px 8px;border-radius:100px;border:1px solid rgba(255,77,0,0.2)">Live</div>
+              </div>
+              <div class="ai-screen-job">
+                <div class="sc-logo" style="background:linear-gradient(135deg,#ff4d00,#ff8a00);width:32px;height:32px;border-radius:8px;font-size:0.7rem;display:flex;align-items:center;justify-content:center;font-weight:800;color:white;flex-shrink:0">S</div>
+                <div>
+                  <div style="font-size:0.82rem;font-weight:600;color:var(--white)">Software Engineer · Stripe</div>
+                  <div style="font-size:0.7rem;color:var(--muted)">Generating cover letter...</div>
+                </div>
+              </div>
+              <div class="ai-typing-box">
+                <div class="ai-typing-label">✦ Cover Letter</div>
+                <div class="ai-typing-text" id="typingText"></div>
+                <span class="typing-cursor">|</span>
+              </div>
+              <div class="ai-actions-row">
+                <button class="ai-action-btn">🔄 Regenerate</button>
+                <button class="ai-action-btn ai-action-primary">Copy →</button>
+              </div>
+              <div class="ai-tips">
+                <div class="ai-tip-label">💡 Resume Tips</div>
+                <div class="ai-tip-item">Add GraphQL to skills section</div>
+                <div class="ai-tip-item">Quantify your React project impact</div>
+              </div>
+            </div>
+
+          </div><!-- end app-screens -->
+
+          <!-- BOTTOM TAB BAR -->
+          <div class="tab-bar">
+            <button class="tab-btn active" data-screen="screen-feed" id="tab-feed">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="7" height="9" rx="1"/><rect x="15" y="3" width="7" height="5" rx="1"/><rect x="15" y="12" width="7" height="9" rx="1"/><rect x="2" y="16" width="7" height="5" rx="1"/></svg>
+              <span>Feed</span>
+            </button>
+            <button class="tab-btn" data-screen="screen-dash" id="tab-dash">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              <span>Track</span>
+            </button>
+            <button class="tab-btn" data-screen="screen-ai" id="tab-ai">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span>AI</span>
+            </button>
+          </div>
+
+        </div><!-- end phone-frame -->
+
+        <!-- BOTTOM floating: Salary insight -->
+        <div class="hf-card hf-bottom">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <div style="font-size:1.4rem">💰</div>
+            <div>
+              <div class="hf-card-title" style="margin-bottom:2px">Salary Estimate · Stripe SWE</div>
+              <div style="font-family:'Syne',sans-serif;font-weight:800;font-size:1rem;color:var(--white)">₹18L – ₹26L <span style="font-size:0.72rem;font-weight:400;color:#666;font-family:'DM Sans',sans-serif">/ year</span></div>
+              <div style="font-size:0.68rem;color:#555;margin-top:1px">Based on 340 similar roles · Bengaluru</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- end mockup-scene -->
     </div>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat"><div class="stat-num">50<span>K+</span></div><div class="stat-label">Live Job Listings</div></div>
   <div class="stat"><div class="stat-num">10<span>+</span></div><div class="stat-label">Job Board Sources</div></div>
@@ -101,7 +270,7 @@
   <h2 class="reveal">Everything you need to<br/><em>land your first role</em></h2>
   <p class="section-sub reveal">A complete job hunting platform built specifically for students — intelligent, fast, and beautifully simple.</p>
   <div class="bento">
-    <!-- Resume + Smart Match -->
+    <!-- Resume + Smart Matching -->
     <div class="bento-card bc-1 bc-big reveal">
       <div class="bento-icon">📄</div>
       <div class="bento-title">Resume Upload & Smart Matching</div>
@@ -120,7 +289,7 @@
       </div>
       <div class="bento-highlight">NLP-Powered Parser</div>
     </div>
-    <!-- Swipe to apply -->
+    <!-- Swipe to Apply -->
     <div class="bento-card bc-2 reveal">
       <div class="bento-icon">👆</div>
       <div class="bento-title">Swipe to Apply</div>
@@ -139,20 +308,20 @@
       <div class="bento-title">Company Profiles</div>
       <div class="bento-body">Culture notes, Glassdoor-style ratings, and company overviews embedded directly in every job card.</div>
     </div>
-    <!-- Alerts -->
+    <!-- Job Alerts -->
     <div class="bento-card bc-5 reveal">
       <div class="bento-icon">🔔</div>
       <div class="bento-title">Real-Time Job Alerts</div>
       <div class="bento-body">Push and email notifications the moment a high-match job drops. Daily digest with your top 5 picks every morning.</div>
     </div>
-    <!-- Profile builder -->
+    <!-- Profile Builder -->
     <div class="bento-card bc-6 reveal">
       <div class="bento-icon">⚙️</div>
       <div class="bento-title">Profile & Preference Builder</div>
-      <div class="bento-body">Set preferred roles, industries, locations, salary range, work type, and experience level. Add or remove skills beyond what the parser detects. Your feed gets smarter with every swipe — the more you interact, the more precisely LYNK tailors your matches to your goals and style.</div>
+      <div class="bento-body">Set preferred roles, industries, locations, salary range, work type, and experience level. Add or remove skills beyond what the parser detects. Your feed gets smarter with every swipe — the more you interact, the more precisely LYNK tailors your matches.</div>
       <div class="bento-highlight">Adaptive Learning Feed</div>
     </div>
-    <!-- Trending -->
+    <!-- Trending Roles -->
     <div class="bento-card bc-7 reveal">
       <div class="bento-icon">📈</div>
       <div class="bento-title">Trending Roles</div>
@@ -341,10 +510,11 @@
   <div class="section-tag" style="position:relative;z-index:1">Early Access</div>
   <h2>Start swiping.<br/><em>Stop searching.</em></h2>
   <p class="section-sub">Join thousands of students on the LYNK waitlist and be the first to land your next role.</p>
-  <div class="cta-form">
-    <input type="email" class="cta-input" placeholder="Enter your email address"/>
-    <a href="#" class="btn-primary">Get Early Access</a>
-  </div>
+  <div class="cta-form" id="waitlistForm">
+  <input type="email" class="cta-input" id="waitlistEmail" placeholder="Enter your email address"/>
+  <button class="btn-primary" id="waitlistBtn">Get Early Access</button>
+</div>
+<p id="waitlistMsg" style="display:none; margin-top:12px; font-size:0.85rem; color:#50dc78; position:relative; z-index:1;"></p>
   <p style="margin-top:20px; font-size:0.78rem; color:#444; position:relative; z-index:1;">No spam. We'll only reach out when LYNK is ready for you.</p>
 </section>
 
@@ -384,35 +554,5 @@
   <span>© 2026 Seeedstack. All rights reserved.</span>
   <span>Built with ❤️ for students everywhere</span>
 </div>
-
-<script>
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach((e, i) => {
-      if (e.isIntersecting) {
-        setTimeout(() => e.target.classList.add('visible'), i * 60);
-        io.unobserve(e.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => io.observe(el));
-
-  // Subtle card tilt on mousemove
-  const phoneFrame = document.querySelector('.phone-frame');
-  if (phoneFrame) {
-    document.querySelector('.hero').addEventListener('mousemove', (e) => {
-      const rect = phoneFrame.getBoundingClientRect();
-      const cx = rect.left + rect.width / 2;
-      const cy = rect.top + rect.height / 2;
-      const dx = (e.clientX - cx) / 30;
-      const dy = (e.clientY - cy) / 30;
-      phoneFrame.style.transform = `perspective(800px) rotateY(${dx}deg) rotateX(${-dy}deg)`;
-    });
-    document.querySelector('.hero').addEventListener('mouseleave', () => {
-      phoneFrame.style.transform = '';
-    });
-  }
-</script>
 </body>
 </html>
